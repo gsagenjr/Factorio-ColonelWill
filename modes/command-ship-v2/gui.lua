@@ -21,6 +21,10 @@ function Gui.CreateGui(player)
     local fundingFrame = guiFlow.add {type = "frame", name = "colonelwill-funding-frame", direction = "vertical", style = "muppet_gui_frame"}
     fundingFrame.add {type = "label", name = "colonelwill-funding-header-label", caption = {"gui-caption.colonelwill-funding-header-label-v2"}, style = "muppet_large_bold_text"}
     fundingFrame.add {type = "label", name = "colonelwill-funding-part-label", caption = {"gui-caption.colonelwill-funding-part-label-v2"}, style = "muppet_bold_text"}
+    
+    fundingFrame.add {type = "label", name = "colonelwill-funding-part-label-details-part1", caption = {"gui-caption.colonelwill-funding-part-label-v2-details-part1"}, style = "muppet_bold_text"}
+    fundingFrame.add {type = "label", name = "colonelwill-funding-part-label-details-part2", caption = {"gui-caption.colonelwill-funding-part-label-v2-details-part2"}, style = "muppet_bold_text"}
+
     fundingFrame.add {type = "label", name = "colonelwill-funding-tier1-label", caption = {"gui-caption.colonelwill-funding-tier1-label-v2"}, style = "muppet_bold_text"}
     fundingFrame.add {type = "label", name = "colonelwill-funding-tier2-label", caption = {"gui-caption.colonelwill-funding-tier2-label-v2"}, style = "muppet_bold_text"}
     fundingFrame.add {type = "label", name = "colonelwill-funding-tier3-label", caption = {"gui-caption.colonelwill-funding-tier3-label-v2"}, style = "muppet_bold_text"}
