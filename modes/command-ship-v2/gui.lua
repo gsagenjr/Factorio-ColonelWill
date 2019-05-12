@@ -24,6 +24,8 @@ function Gui.CreateGui(player)
     
     fundingFrame.add {type = "label", name = "colonelwill-funding-part-label-details-part1", caption = {"gui-caption.colonelwill-funding-part-label-v2-details-part1"}, style = "muppet_bold_text"}
     fundingFrame.add {type = "label", name = "colonelwill-funding-part-label-details-part2", caption = {"gui-caption.colonelwill-funding-part-label-v2-details-part2"}, style = "muppet_bold_text"}
+    fundingFrame.add {type = "label", name = "colonelwill-funding-part-label-details-part3", caption = {"gui-caption.colonelwill-funding-part-label-v2-details-part3"}, style = "muppet_bold_text"}
+    fundingFrame.add {type = "label", name = "colonelwill-funding-part-label-details-part4", caption = {"gui-caption.colonelwill-funding-part-label-v2-details-part4"}, style = "muppet_bold_text"}
 
     fundingFrame.add {type = "label", name = "colonelwill-funding-tier1-label", caption = {"gui-caption.colonelwill-funding-tier1-label-v2"}, style = "muppet_bold_text"}
     fundingFrame.add {type = "label", name = "colonelwill-funding-tier2-label", caption = {"gui-caption.colonelwill-funding-tier2-label-v2"}, style = "muppet_bold_text"}
