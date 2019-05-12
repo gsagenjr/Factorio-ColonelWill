@@ -1,7 +1,7 @@
 local Constants = require("constants")
-local modeFilePath = "modes/escape-pod-v1"
+local modeFilePath = "modes/command-ship-v1"
 
-if settings.startup["colonelwill_mode"].value ~= "escape-pod-v1" then
+if settings.startup["colonelwill_mode"].value ~= "command-ship-v1" then
     return
 end
 
@@ -9,17 +9,17 @@ data:extend(
     {
         {
             type = "item",
-            name = "escape-pod",
+            name = "command-ship",
             icon = "__base__/graphics/technology/demo/analyse-ship.png",
             icon_size = 128,
             subgroup = "intermediate-product",
             order = "m[satellite]a",
-            place_result = "escape-pod",
+            place_result = "command-ship",
             stack_size = 1
         },
         {
             type = "recipe",
-            name = "escape-pod",
+            name = "command-ship",
             energy_required = 5,
             enabled = false,
             category = "crafting",
@@ -32,12 +32,12 @@ data:extend(
                 {"rocket-fuel", 50},
                 {"raw-fish", 1}
             },
-            result = "escape-pod",
+            result = "command-ship",
             requester_paste_multiplier = 1
         },
         {
             type = "car",
-            name = "escape-pod",
+            name = "command-ship",
             icon = "__base__/graphics/technology/demo/analyse-ship.png",
             icon_size = 128,
             collision_box = {{-1, -1}, {1, 1}},
@@ -63,7 +63,7 @@ data:extend(
         },
         {
             type = "technology",
-            name = "escape-pod-1",
+            name = "command-ship-1",
             icon_size = 128,
             icon = "__base__/graphics/technology/demo/analyse-ship.png",
             effects = {
@@ -86,7 +86,7 @@ data:extend(
         },
         {
             type = "technology",
-            name = "escape-pod-2",
+            name = "command-ship-2",
             icon_size = 128,
             icon = "__base__/graphics/technology/demo/analyse-ship.png",
             effects = {
@@ -95,7 +95,7 @@ data:extend(
                     effect_description = {"technology-modifier.espace-pod"}
                 }
             },
-            prerequisites = {"escape-pod-1", "chemical-science-pack"},
+            prerequisites = {"command-ship-1", "chemical-science-pack"},
             unit = {
                 count = 5000,
                 ingredients = {
@@ -110,7 +110,7 @@ data:extend(
         },
         {
             type = "technology",
-            name = "escape-pod-3",
+            name = "command-ship-3",
             icon_size = 128,
             icon = "__base__/graphics/technology/demo/analyse-ship.png",
             effects = {
@@ -119,7 +119,7 @@ data:extend(
                     effect_description = {"technology-modifier.espace-pod"}
                 }
             },
-            prerequisites = {"escape-pod-2", "production-science-pack"},
+            prerequisites = {"command-ship-2", "production-science-pack"},
             unit = {
                 count = 5000,
                 ingredients = {
@@ -135,7 +135,7 @@ data:extend(
         },
         {
             type = "technology",
-            name = "escape-pod-4",
+            name = "command-ship-4",
             icon_size = 128,
             icon = "__base__/graphics/technology/demo/analyse-ship.png",
             effects = {
@@ -144,7 +144,7 @@ data:extend(
                     effect_description = {"technology-modifier.espace-pod"}
                 }
             },
-            prerequisites = {"escape-pod-3", "utility-science-pack"},
+            prerequisites = {"command-ship-3", "utility-science-pack"},
             unit = {
                 count = 5000,
                 ingredients = {
@@ -161,9 +161,9 @@ data:extend(
         },
         {
             type = "technology",
-            name = "escape-pod-5",
-            localised_name = {"technology-name.escape-pod-shiny-bit"},
-            localised_description = {"technology-description.escape-pod-shiny-bit"},
+            name = "command-ship-5",
+            localised_name = {"technology-name.command-ship-shiny-bit"},
+            localised_description = {"technology-description.command-ship-shiny-bit"},
             icon_size = 128,
             icon = "__base__/graphics/technology/demo/analyse-ship.png",
             effects = {
@@ -172,7 +172,7 @@ data:extend(
                     effect_description = {"technology-modifier.espace-pod"}
                 }
             },
-            prerequisites = {"escape-pod-4", "space-science-pack"},
+            prerequisites = {"command-ship-4", "space-science-pack"},
             unit = {
                 count = 1000,
                 ingredients = {

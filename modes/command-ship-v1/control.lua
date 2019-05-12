@@ -1,10 +1,10 @@
-local modeFilePath = "modes/escape-pod-v1"
+local modeFilePath = "modes/command-ship-v1"
 local Commands = require("utility/commands")
 local Utils = require("utility/utils")
 local Constants = require("constants")
 local Gui = require(modeFilePath .. "/gui.lua")
 
-if settings.startup["colonelwill_mode"].value ~= "escape-pod-v1" then
+if settings.startup["colonelwill_mode"].value ~= "command-ship-v1" then
     return
 end
 
@@ -12,10 +12,10 @@ local function EscapePodAddPart(command)
     local rawValue = command.parameter
     local value = tonumber(rawValue)
     if type(value) ~= "number" then
-        game.print("escape_pod_add_level value '" .. rawValue .. "' not a valid number")
+        game.print("command_ship_add_level value '" .. rawValue .. "' not a valid number")
         return
     end
-    game.print("escape_pod_add_level added " .. value .. " levels")
+    game.print("command_ship_add_level added " .. value .. " levels")
     global.Mod.escapeTechLevelsRequired = global.Mod.escapeTechLevelsRequired + value
     global.Mod.escapeTechLevelsAdded = global.Mod.escapeTechLevelsAdded + value
     Gui.RefreshAll()
@@ -27,7 +27,7 @@ local function OnRocketLaunched(event)
         return
     end
     for name, count in pairs(rocket.get_inventory(defines.inventory.rocket).get_contents()) do
-        if name == "escape-pod" and count > 0 and not global.Mod.gameFinished then
+        if name == "command-ship" and count > 0 and not global.Mod.gameFinished then
             global.Mod.gameFinished = true
             game.set_game_state {game_finished = true, player_won = true, can_continue = true, victorious_force = rocket.force}
         end
@@ -39,15 +39,15 @@ local function OnResearchFinished(event)
     if technology.name == "recruit-workforce-member" then
         global.Mod.recruitedWorkforceCount = technology.level - 1
         Gui.RefreshAll()
-    elseif string.find(technology.name, "escape-pod", 0, true) and not global.Mod.escapeTechCompleted then
+    elseif string.find(technology.name, "command-ship", 0, true) and not global.Mod.escapeTechCompleted then
         global.Mod.escapeTechLevelsDone = global.Mod.escapeTechLevelsDone + (technology.research_unit_count / 1000)
         local force = technology.force
         if global.Mod.escapeTechLevelsDone == global.Mod.escapeTechLevelsRequired then
-            force.recipes["escape-pod"].enabled = true
+            force.recipes["command-ship"].enabled = true
             technology.enabled = false
-            game.print("Escape Pod Unlocked", Constants.Color.green)
+            game.print("Command Ship Unlocked", Constants.Color.green)
             global.Mod.escapeTechCompleted = true
-        elseif technology.name == "escape-pod-5" then
+        elseif technology.name == "command-ship-5" then
             local alreadyQueued = false
             for _, queuedResearch in pairs(force.research_queue) do
                 if queuedResearch.name == technology.name then
@@ -78,7 +78,7 @@ local function CreateGlobals()
 end
 
 local function OnLoad()
-    Commands.Register("escape_pod_add_level", {"api-description.escape_pod_add_level"}, EscapePodAddPart, true)
+    Commands.Register("command_ship_add_level", {"api-description.command_ship_add_level"}, EscapePodAddPart, true)
     Utils.DisableSiloScript()
 end
 

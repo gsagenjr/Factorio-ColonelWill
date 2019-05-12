@@ -1,8 +1,8 @@
 local Constants = require("constants")
-local modeFilePath = "modes/escape-pod-v2"
+local modeFilePath = "modes/command-ship-v2"
 local Utils = require("utility/utils")
 
-if settings.startup["colonelwill_mode"].value ~= "escape-pod-v2" then
+if settings.startup["colonelwill_mode"].value ~= "command-ship-v2" then
     return
 end
 
@@ -10,17 +10,17 @@ data:extend(
     {
         {
             type = "item",
-            name = "escape-pod-v2",
+            name = "command-ship-v2",
             icon = "__base__/graphics/technology/demo/analyse-ship.png",
             icon_size = 128,
             subgroup = "intermediate-product",
             order = "m[satellite]a",
-            place_result = "escape-pod-v2",
+            place_result = "command-ship-v2",
             stack_size = 1
         },
         {
             type = "recipe",
-            name = "escape-pod-v2",
+            name = "command-ship-v2",
             energy_required = 5,
             enabled = false,
             category = "crafting",
@@ -33,12 +33,12 @@ data:extend(
                 {"rocket-fuel", 50},
                 {"raw-fish", 1}
             },
-            result = "escape-pod-v2",
+            result = "command-ship-v2",
             requester_paste_multiplier = 1
         },
         {
             type = "car",
-            name = "escape-pod-v2",
+            name = "command-ship-v2",
             icon = "__base__/graphics/technology/demo/analyse-ship.png",
             icon_size = 128,
             flags = {"hide-alt-info"},
@@ -65,11 +65,11 @@ data:extend(
         },
         {
             type = "technology",
-            name = "escape-pod-v2-1",
+            name = "command-ship-v2-1",
             icon_size = 128,
             icon = "__base__/graphics/technology/demo/analyse-ship.png",
-            localised_name = {"technology-name.escape-pod-v2"},
-            localised_description = {"technology-description.escape-pod-v2"},
+            localised_name = {"technology-name.command-ship-v2"},
+            localised_description = {"technology-description.command-ship-v2"},
             enabled = false,
             effects = {
                 {
@@ -92,11 +92,11 @@ data:extend(
         },
         {
             type = "technology",
-            name = "escape-pod-v2-6",
+            name = "command-ship-v2-6",
             icon_size = 128,
             icon = "__base__/graphics/technology/demo/analyse-ship.png",
-            localised_name = {"technology-name.escape-pod-v2"},
-            localised_description = {"technology-description.escape-pod-v2"},
+            localised_name = {"technology-name.command-ship-v2"},
+            localised_description = {"technology-description.command-ship-v2"},
             enabled = false,
             effects = {
                 {
@@ -104,7 +104,7 @@ data:extend(
                     effect_description = {"technology-modifier.espace-pod"}
                 }
             },
-            prerequisites = {"escape-pod-v2-1", "chemical-science-pack", "military-science-pack"},
+            prerequisites = {"command-ship-v2-1", "chemical-science-pack", "military-science-pack"},
             unit = {
                 count = 1000,
                 ingredients = {
@@ -121,11 +121,11 @@ data:extend(
         },
         {
             type = "technology",
-            name = "escape-pod-v2-11",
+            name = "command-ship-v2-11",
             icon_size = 128,
             icon = "__base__/graphics/technology/demo/analyse-ship.png",
-            localised_name = {"technology-name.escape-pod-v2"},
-            localised_description = {"technology-description.escape-pod-v2"},
+            localised_name = {"technology-name.command-ship-v2"},
+            localised_description = {"technology-description.command-ship-v2"},
             enabled = false,
             effects = {
                 {
@@ -133,7 +133,7 @@ data:extend(
                     effect_description = {"technology-modifier.espace-pod"}
                 }
             },
-            prerequisites = {"escape-pod-v2-6", "production-science-pack"},
+            prerequisites = {"command-ship-v2-6", "production-science-pack"},
             unit = {
                 count = 1000,
                 ingredients = {
@@ -151,11 +151,11 @@ data:extend(
         },
         {
             type = "technology",
-            name = "escape-pod-v2-16",
+            name = "command-ship-v2-16",
             icon_size = 128,
             icon = "__base__/graphics/technology/demo/analyse-ship.png",
-            localised_name = {"technology-name.escape-pod-v2"},
-            localised_description = {"technology-description.escape-pod-v2"},
+            localised_name = {"technology-name.command-ship-v2"},
+            localised_description = {"technology-description.command-ship-v2"},
             enabled = false,
             effects = {
                 {
@@ -163,7 +163,7 @@ data:extend(
                     effect_description = {"technology-modifier.espace-pod"}
                 }
             },
-            prerequisites = {"escape-pod-v2-11", "utility-science-pack"},
+            prerequisites = {"command-ship-v2-11", "utility-science-pack"},
             unit = {
                 count = 1000,
                 ingredients = {
@@ -182,11 +182,11 @@ data:extend(
         },
         {
             type = "technology",
-            name = "escape-pod-v2-21",
+            name = "command-ship-v2-21",
             icon_size = 128,
             icon = "__base__/graphics/technology/demo/analyse-ship.png",
-            localised_name = {"technology-name.escape-pod-v2"},
-            localised_description = {"technology-description.escape-pod-v2"},
+            localised_name = {"technology-name.command-ship-v2"},
+            localised_description = {"technology-description.command-ship-v2"},
             enabled = false,
             effects = {
                 {
@@ -194,7 +194,7 @@ data:extend(
                     effect_description = {"technology-modifier.espace-pod"}
                 }
             },
-            prerequisites = {"escape-pod-v2-16", "space-science-pack"},
+            prerequisites = {"command-ship-v2-16", "space-science-pack"},
             unit = {
                 count = 1000,
                 ingredients = {
@@ -320,7 +320,7 @@ data:extend(
 )
 
 local function DuplicateEscapePodTechnologyForWorkforceTechLevel(technologyLevel, workforceLevel)
-    local baseName = "escape-pod-v2"
+    local baseName = "command-ship-v2"
     local techNameToClone = baseName .. "-" .. technologyLevel
     local newTech = Utils.DeepCopy(data.raw["technology"][techNameToClone])
     newTech.name = baseName .. "-w" .. workforceLevel .. "-" .. technologyLevel

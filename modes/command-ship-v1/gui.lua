@@ -11,7 +11,7 @@ end
 function Gui.CreateGui(player)
     local guiFlow = player.gui.left.add {type = "flow", name = "colonelwill-gui-flow", style = "muppet_padded_vertical_flow", direction = "vertical"}
 
-    local escapePodFrame = guiFlow.add {type = "frame", name = "colonelwill-escape-pod-frame", direction = "vertical", style = "muppet_gui_frame"}
+    local escapePodFrame = guiFlow.add {type = "frame", name = "colonelwill-command-ship-frame", direction = "vertical", style = "muppet_gui_frame"}
     local techStatus = escapePodFrame.add {type = "label", name = "colonelwill-tech-label", caption = {"gui-caption.colonelwill-tech-label", global.Mod.escapeTechLevelsDone, global.Mod.escapeTechLevelsRequired}, style = "muppet_large_text"}
     if global.Mod.escapeTechCompleted then
         techStatus.style.font_color = Constants.Color.green
