@@ -42,6 +42,28 @@ data:extend(
             requester_paste_multiplier = 1
         },
         {
+            type = "item",
+            name = "energy-shield",
+            icon = Constants.AssetModName .. "/" .. modeFilePath .. "/graphics/technology/energy-shield.png",
+            icon_size = 32,
+            subgroup = "intermediate-product",
+            order = "zzz",
+            stack_size = 1
+        },
+        {
+            type = "recipe",
+            name = "energy-shield",
+            energy_required = 10,
+            enabled = true,
+            category = "crafting",
+            ingredients = {
+                {"energy-shield-mk2-equipment", 5},
+                {"steel-plate", 200},
+            },
+            result = "energy-shield",
+            requester_paste_multiplier = 1
+        },
+        {
             type = "recipe",
             name = "command-ship-v2",
             energy_required = 5,
