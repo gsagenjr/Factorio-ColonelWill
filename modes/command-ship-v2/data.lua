@@ -19,6 +19,29 @@ data:extend(
             stack_size = 1
         },
         {
+            type = "item",
+            name = "power-generator",
+            icon = Constants.AssetModName .. "/" .. modeFilePath .. "/graphics/technology/power-generator.png",
+            icon_size = 32,
+            subgroup = "intermediate-product",
+            order = "zzz",
+            stack_size = 1
+        },
+        {
+            type = "recipe",
+            name = "power-generator",
+            energy_required = 10,
+            enabled = true,
+            category = "crafting",
+            ingredients = {
+                {"fusion-reactor-equipment", 5},
+                {"copper-cable", 1000},
+                {"nuclear-fuel", 200}
+            },
+            result = "power-generator",
+            requester_paste_multiplier = 1
+        },
+        {
             type = "recipe",
             name = "command-ship-v2",
             energy_required = 5,
